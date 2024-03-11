@@ -12,6 +12,19 @@ The implemented logic meets the following requirements:
 
 3. **Unique Tracking**: Ensures that every page view and click is tracked uniquely and stored per user basis to accurately compute CTR.
 
+Function to calculate CTR for clicks on signup over the home page
+On a production enviroment we can check how many users have clicked and how many
+total amount of visits the home page had.
+In this case clickCount it will be always ine since there is only one user
+
+```
+const calculateCTR = () => {
+  const value =
+    analyticsStore.clickCount /
+    analyticsStore.pageViews.filter((page) => page.url === "/").length;
+};
+```
+
 ## Implementation Details
 
 - **Framework**: Nuxt.js is used, in alignment with job requirements, leveraging its standard folder structure and functionalities.
@@ -19,6 +32,7 @@ The implemented logic meets the following requirements:
 - **Styling**: Tailwind CSS for styling and @nuxt/ui for basic form components.
 
 - **Components**:
+
   - Home page with a randomly selected blog variation and a text editor page.
   - Dark mode toggle button.
   - Main editor component for content editing to help non-developers modify content.
