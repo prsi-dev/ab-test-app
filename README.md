@@ -1,75 +1,46 @@
-# Nuxt 3 Minimal Starter
+# A/B Testing Framework
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This project demonstrates an A/B testing solution implemented with Nuxt.js, showcasing a tech assessment challenge with specific acceptance criteria focused on visitor variation assignment, pageview and event tracking, and click-through rate (CTR) analysis for a "Sign up" button.
 
-## Setup
+## Acceptance Criteria
 
-Make sure to install the dependencies:
+The implemented logic meets the following requirements:
 
-```bash
-# npm
-npm install
+1. **Visitor Variation Assignment**: Each visitor is randomly assigned a variation when they first land on the page, and this variation does not change on page reloads.
 
-# pnpm
-pnpm install
+2. **Pageview and Event Tracking**: Utilizes the `analytics-api.js` method to track pageviews when a visitor lands and events when a visitor clicks the “Sign up” button.
 
-# yarn
-yarn install
+3. **Unique Tracking**: Ensures that every page view and click is tracked uniquely and stored per user basis to accurately compute CTR.
 
-# bun
-bun install
-```
+## Implementation Details
 
-## Development Server
+- **Framework**: Nuxt.js is used, in alignment with job requirements, leveraging its standard folder structure and functionalities.
 
-Start the development server on `http://localhost:3000`:
+- **Styling**: Tailwind CSS for styling and @nuxt/ui for basic form components.
 
-```bash
-# npm
-npm run dev
+- **Components**:
+  - Home page with a randomly selected blog variation and a text editor page.
+  - Dark mode toggle button.
+  - Main editor component for content editing to help non-developers modify content.
+  - Next-ui components for form fields, buttons, and icons.
 
-# pnpm
-pnpm run dev
+- **State Management**: Pinia store for editor data and an analytics store for tracking state and events. localStorage is utilized for data persistence across page reloads and navigation.
 
-# yarn
-yarn dev
+- **Analytics API**: Setup according to Nuxt standards, handling sign-up, page-view, and click events through POST requests.
 
-# bun
-bun run dev
-```
+## Running the Application
 
-## Production
+To get the application up and running on your local machine, follow these steps:
 
-Build the application for production:
+1. Clone the repository to your local machine.
+2. Navigate to the project directory.
+3. Install dependencies using `npm install`.
+4. Launch the development server with `npm run dev`.
 
-```bash
-# npm
-npm run build
+The application should now be accessible via `http://localhost:3000`.
 
-# pnpm
-pnpm run build
+## Project Goals
 
-# yarn
-yarn build
+This project serves as a prototype for implementing an A/B testing framework within a Nuxt app, exploring the integration of client and server-side logic, data persistence using localStorage, and lifecycle management in a Vue application.
 
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Enjoy testing and exploring the A/B testing capabilities of this Nuxt app 🚀
